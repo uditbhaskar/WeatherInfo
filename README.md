@@ -1,5 +1,5 @@
 # WeatherInfo
-A weather application made using MVVM architecture.
+A weather application made using MVVM architecture implementation.
 
 
 
