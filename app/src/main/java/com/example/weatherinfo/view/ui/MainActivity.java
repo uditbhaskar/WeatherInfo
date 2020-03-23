@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.example.weatherinfo.R;
 import com.example.weatherinfo.services.model.DataModel;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     ProgressBar progressBar;
     String cityName;
+    LottieAnimationView animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Boolean result = infoViewModel.getSuccess().getValue();
 
                 if (result && dataModels!=null) {
+                    animationView.setVisibility(View.INVISIBLE);
                     linearLayout.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.INVISIBLE);
                     Double temp = dataModels.getMain().getTemp();
@@ -95,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Enter valid city name!", Toast.LENGTH_SHORT).show();
                     linearLayout.setVisibility(View.INVISIBLE);
+                    animationView.setVisibility(View.VISIBLE);
+
                 }
             }
         });
@@ -111,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        animationView = findViewById(R.id.animation_view);
         btn_search = findViewById(R.id.btn_search);
         et_location = findViewById(R.id.tv_location_current);
         tv_temperature = findViewById(R.id.tv_temperature_current);
