@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(MainActivity.this, "Enter valid city name!", Toast.LENGTH_SHORT).show();
+                    linearLayout.setVisibility(View.INVISIBLE);
                 }
             }
         });
