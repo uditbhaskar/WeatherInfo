@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    Toast.makeText(MainActivity.this, "Enter valid city name!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Enter valid city name!", Toast.LENGTH_LONG).show();
                     linearLayout.setVisibility(View.INVISIBLE);
                     animationView.setVisibility(View.VISIBLE);
 
